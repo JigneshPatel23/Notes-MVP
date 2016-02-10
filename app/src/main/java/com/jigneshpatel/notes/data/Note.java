@@ -49,7 +49,8 @@ public final class Note {
     }
 
     public boolean isEmpty(){
-        return TextUtils.isEmpty(mTitle) && TextUtils.isEmpty(mDescription);
+        return (mTitle == null || "".equals(mTitle)) &&
+                (mDescription == null || "".equals(mDescription));
     }
 
 }

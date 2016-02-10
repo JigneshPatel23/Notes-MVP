@@ -43,7 +43,7 @@ public class NotesDetailPresenterTest {
     public void getNoteFromRepoAndLoadIntoView(){
         Note note = new Note(TITLE_TEST, DESCRIPTION_TEST);
         mNoteDetailPresenter.openNote(note.getId());
-        verify(mNotesRepository).getNote(eq(note.getTitle()),mGetNoteCallbackCaptor.capture());
+        verify(mNotesRepository).getNote(eq(note.getId()),mGetNoteCallbackCaptor.capture());
         verify(mNoteDetailView).setProgressIndicator(true);
 
         mGetNoteCallbackCaptor.getValue().onNoteLoaded(note);
