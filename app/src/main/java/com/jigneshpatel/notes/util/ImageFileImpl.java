@@ -1,5 +1,6 @@
 package com.jigneshpatel.notes.util;
 
+import android.net.Uri;
 import android.os.Environment;
 import android.support.annotation.VisibleForTesting;
 
@@ -16,20 +17,24 @@ public class ImageFileImpl implements ImageFile {
 
     @Override
     public void create(String name, String extension) throws IOException {
+        File storageDir =  Environment.getExternalStoragePublicDirectory(
+                Environment.DIRECTORY_PICTURES);
+
+        mImageFile = File.createTempFile(name, extension, storageDir);
     }
 
     @Override
     public boolean exists() {
-        return false;
+        return null != mImageFile && mImageFile.exists();
     }
 
     @Override
     public void delete() {
-
+        mImageFile = null;
     }
 
     @Override
     public String getPath() {
-        return null;
+        return Uri.fromFile(mImageFile).toString();
     }
 }
