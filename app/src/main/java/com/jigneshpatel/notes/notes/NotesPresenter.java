@@ -11,7 +11,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 /**
  * Created on 8/2/16.
  */
-public class NotesPresenter implements NotesContract.UserActionListener {
+public class NotesPresenter implements NotesContract.UserActionsListener {
 
     private final NotesRepository mNotesRepository;
     private final NotesContract.View mNotesView;

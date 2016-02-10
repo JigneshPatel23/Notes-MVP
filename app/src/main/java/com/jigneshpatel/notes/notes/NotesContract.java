@@ -18,7 +18,7 @@ public interface NotesContract {
         void showNoteDetailUi(String noteId);
     }
 
-    interface UserActionListener{
+    interface UserActionsListener{
         void loadNotes(boolean forceUpdate);
         void addNewNote();
         void openNoteDetails(@NonNull Note note);
